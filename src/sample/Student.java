@@ -2,14 +2,16 @@ package sample;
 import java.util.UUID;
 
 public class Student {
-    private String name;
-    private UUID id;
-    private int age;
-    private String major;
-    private double GPA;
+    public String name;
+    public UUID id;
+    public int age;
+    public String major;
+    public double GPA;
+
+
 
     @Override
     public String toString() {
-        return (this.name + " " + this.age + " " + this.major);
+        return (this.name+ " "+this.id+ " "+ this.age+ " "+this.major + " "+ this.GPA);
     }
 }

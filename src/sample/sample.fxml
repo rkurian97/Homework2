@@ -20,9 +20,9 @@
 <HBox fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml" alignment="center">
     <HBox   >
         <children>
-            <ListView fx:id="studentListView" >
+            <JFXListView fx:id="materialListView" prefWidth="600" >
 
-            </ListView>
+            </JFXListView>
         </children>
     </HBox>
     <VBox>
@@ -30,6 +30,7 @@
             <VBox>
                 <JFXButton text="CREATE DB BUTTON" prefWidth="150" fx:id="createdbbutton" />
                 <JFXButton text="LOAD BUTTON" prefWidth="150" fx:id="loaddatabutton"  />
+                <JFXButton text="Chemical Engineering" prefWidth="150"/>
             </VBox>
         </HBox>
 
