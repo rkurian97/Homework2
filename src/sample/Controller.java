@@ -174,6 +174,38 @@ public class Controller implements Initializable {
 
             @Override
             public void handle(ActionEvent actionEvent) {
+                try{
+                    Connection conn = DriverManager.getConnection(DB_URL);
+
+                    Statement stmt = conn.createStatement();
+
+                    String sqlStatement = "SELECT * FROM Student WHERE Age>9 ";
+                    ResultSet result = stmt.executeQuery(sqlStatement);
+                    ObservableList<Student> dbStudentList = FXCollections.observableArrayList();
+                    while (result.next())
+                    {
+                        Student student = new Student();
+                        student.id = UUID.fromString(result.getString("Id"));
+                        student.name = result.getString("Name");
+                        student.age = result.getInt("Age");
+                        student.major = result.getString("Major");
+                        student.GPA = result.getDouble("GPA");
+
+                        dbStudentList.add(student);
+                    }
+                    materialListView.setItems(dbStudentList);
+
+                    System.out.println("DATA LOADED");
+
+                    stmt.close();
+                    conn.close();
+                }
+                catch (Exception ex)
+                {
+                    var msg = ex.getMessage();
+                    System.out.println("DATA NOT LOADED");
+                    System.out.println(msg);
+                }
 
 
 
@@ -183,6 +215,38 @@ public class Controller implements Initializable {
 
             @Override
             public void handle(ActionEvent actionEvent) {
+                try{
+                    Connection conn = DriverManager.getConnection(DB_URL);
+
+                    Statement stmt = conn.createStatement();
+
+                    String sqlStatement = "SELECT * FROM Student WHERE GPA>1.0";
+                    ResultSet result = stmt.executeQuery(sqlStatement);
+                    ObservableList<Student> dbStudentList = FXCollections.observableArrayList();
+                    while (result.next())
+                    {
+                        Student student = new Student();
+                        student.id = UUID.fromString(result.getString("Id"));
+                        student.name = result.getString("Name");
+                        student.age = result.getInt("Age");
+                        student.major = result.getString("Major");
+                        student.GPA = result.getDouble("GPA");
+
+                        dbStudentList.add(student);
+                    }
+                    materialListView.setItems(dbStudentList);
+
+                    System.out.println("DATA LOADED");
+
+                    stmt.close();
+                    conn.close();
+                }
+                catch (Exception ex)
+                {
+                    var msg = ex.getMessage();
+                    System.out.println("DATA NOT LOADED");
+                    System.out.println(msg);
+                }
 
 
             }
