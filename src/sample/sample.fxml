@@ -30,7 +30,10 @@
             <VBox>
                 <JFXButton text="CREATE DB BUTTON" prefWidth="150" fx:id="createdbbutton" />
                 <JFXButton text="LOAD BUTTON" prefWidth="150" fx:id="loaddatabutton"  />
-                <JFXButton text="Chemical Engineering" prefWidth="150"/>
+                <JFXButton text="Major:Chemical Engineering" prefWidth="200" fx:id="majorF"/>
+                <JFXButton text="Age>9" prefWidth="150" fx:id="ageF"/>
+                <JFXButton text="GPA>1" prefWidth="150" fx:id="gpaF"/>
+
             </VBox>
         </HBox>
 

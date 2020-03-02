@@ -28,6 +28,12 @@ public class Controller implements Initializable {
     @FXML
     JFXButton loaddatabutton;
     @FXML
+    JFXButton majorF;
+    @FXML
+    JFXButton ageF;
+    @FXML
+    JFXButton gpaF;
+    @FXML
     JFXListView materialListView;
 
 
@@ -123,6 +129,66 @@ public class Controller implements Initializable {
 
             }
         });
+
+        majorF.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try{
+                    Connection conn = DriverManager.getConnection(DB_URL);
+
+                    Statement stmt = conn.createStatement();
+
+                    String sqlStatement = "SELECT * FROM Student WHERE Major= 'Chemical Engineering'";
+                    ResultSet result = stmt.executeQuery(sqlStatement);
+                    ObservableList<Student> dbStudentList = FXCollections.observableArrayList();
+                    while (result.next())
+                    {
+                        Student student = new Student();
+                        student.id = UUID.fromString(result.getString("Id"));
+                        student.name = result.getString("Name");
+                        student.age = result.getInt("Age");
+                        student.major = result.getString("Major");
+                        student.GPA = result.getDouble("GPA");
+
+                        dbStudentList.add(student);
+                    }
+                    materialListView.setItems(dbStudentList);
+
+                    System.out.println("DATA LOADED");
+
+                    stmt.close();
+                    conn.close();
+                }
+                catch (Exception ex)
+                {
+                    var msg = ex.getMessage();
+                    System.out.println("DATA NOT LOADED");
+                    System.out.println(msg);
+                }
+
+
+            }
+        });
+        ageF.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent actionEvent) {
+
+
+
+            }
+        });
+        gpaF.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent actionEvent) {
+
+
+            }
+        });
+
+
 
 
 
