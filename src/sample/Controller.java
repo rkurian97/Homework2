@@ -76,6 +76,43 @@ public class Controller implements Initializable {
                     String sql3 = "INSERT INTO Student VALUES" + "('Jesse Pinkman', '" + idString3 + "', 15, 'ART', 2.0)";
                     stmt.executeUpdate(sql3);
 
+                    UUID id4 = UUID.randomUUID();
+                    String idString4 = id4.toString();
+                    String sql4 = "INSERT INTO Student VALUES" + "('Harry Potter', '" + idString4 + "', 17, 'Chemistry', 4.0)";
+                    stmt.executeUpdate(sql4);
+
+                    UUID id5 = UUID.randomUUID();
+                    String idString5 = id5.toString();
+                    String sql5 = "INSERT INTO Student VALUES" + "('Ragnar Lothbrok', '" + idString5 + "', 19, 'Chemistry', 3.0)";
+                    stmt.executeUpdate(sql5);
+
+                    UUID id6 = UUID.randomUUID();
+                    String idString6 = id6.toString();
+                    String sql6 = "INSERT INTO Student VALUES" + "('Joker', '" + idString6 + "', 19, 'Art', 4.0)";
+                    stmt.executeUpdate(sql6);
+
+                    UUID id7 = UUID.randomUUID();
+                    String idString7 = id7.toString();
+                    String sql7 = "INSERT INTO Student VALUES" + "('Bruce Wayne', '" + idString7 + "', 9, 'Chemical Engineering', 1.0)";
+                    stmt.executeUpdate(sql7);
+
+                    UUID id8 = UUID.randomUUID();
+                    String idString8 = id8.toString();
+                    String sql8 = "INSERT INTO Student VALUES" + "('Gandalf', '" + idString8 + "', 70, 'Art', 4.0)";
+                    stmt.executeUpdate(sql8);
+
+                    UUID id9 = UUID.randomUUID();
+                    String idString9 = id9.toString();
+                    String sql9 = "INSERT INTO Student VALUES" + "('Darth Vader', '" + idString9 + "', 26, 'Chemical Engineering', 1.0)";
+                    stmt.executeUpdate(sql9);
+
+                    UUID id10 = UUID.randomUUID();
+                    String idString10 = id10.toString();
+                    String sql10 = "INSERT INTO Student VALUES" + "('Pablo Escobar', '" + idString10 + "', 24, 'Finance', 2.0)";
+                    stmt.executeUpdate(sql10);
+
+
+
 
                     System.out.println("TABLE FILLED");
 
@@ -254,28 +291,6 @@ public class Controller implements Initializable {
 
 
 
-
-
-     /*   UUID id4 = UUID.randomUUID();
-        var student4 = new Student("Harry Potter", id4, "17", "Chemistry", "4.0");
-
-        UUID id5 = UUID.randomUUID();
-        var student5 = new Student("Ragnar Lothbrok", id5, "19", "Finance", "4.0");
-
-        UUID id6 = UUID.randomUUID();
-        var student6 = new Student("Joker", id6, "19", "Art", "4.0");
-
-        UUID id7 = UUID.randomUUID();
-        var student7 = new Student("Bruce Wayne", id7, "9", "Chemical Engineering", "1.0");
-
-        UUID id8 = UUID.randomUUID();
-        var student8 = new Student("Gandalf", id8, "9", "Art", "4.0");
-
-        UUID id9 = UUID.randomUUID();
-        var student9 = new Student("Darth Vader", id9, "26", "Chemical Engineering", "1.0");
-
-        UUID id10 = UUID.randomUUID();
-        var student10 = new Student("Pablo Escobar", id10, "24", "Finance", "3.0"); */
     }
 
 }
